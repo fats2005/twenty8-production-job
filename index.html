@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerApply | Job Application Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="nav container">
+    <div class="logo">Career<span>Apply</span></div>
+    <button id="settingsBtn" class="icon-btn" aria-label="Open settings">⚙️</button>
+  </nav>
+  <div class="hero-content container">
+    <p class="eyebrow">ONLINE RECRUITMENT PORTAL</p>
+    <h1>Apply for your next opportunity.</h1>
+    <p>Complete your application one step at a time. Your progress is saved on this device.</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="application card">
+    <div class="top-row">
+      <div>
+        <p class="eyebrow">JOB APPLICATION</p>
+        <h2 id="stepTitle">Step 1 of 10</h2>
+      </div>
+      <div class="progress-box">
+        <strong id="progressPercent">0%</strong>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+    </div>
+
+    <div class="deadline-banner">
+      <span>⏰ Application deadline</span>
+      <strong id="deadlineText">30 November 2026</strong>
+      <span id="countdown">Calculating…</span>
+    </div>
+
+    <form id="jobForm" novalidate>
+      <div class="step active">
+        <span class="step-icon">👤</span>
+        <h3>What is your full name?</h3>
+        <p>Enter your legal full name.</p>
+        <input id="fullName" name="fullName" required placeholder="Full name" autocomplete="name">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">🪪</span>
+        <h3>ID or Passport number</h3>
+        <p>Enter your identification number.</p>
+        <input id="idNumber" name="idNumber" required placeholder="ID / Passport number">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">⚧</span>
+        <h3>Select your gender</h3>
+        <select id="gender" name="gender" required>
+          <option value="">Choose gender</option>
+          <option>Male</option><option>Female</option><option>Prefer not to say</option>
+        </select>
+      </div>
+
+      <div class="step">
+        <span class="step-icon">🌍</span>
+        <h3>Which country are you from?</h3>
+        <input id="country" name="country" required value="Kenya" placeholder="Country">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">📱</span>
+        <h3>Your phone number</h3>
+        <input id="phone" name="phone" type="tel" required placeholder="+254 7XX XXX XXX" autocomplete="tel">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">✉️</span>
+        <h3>Your email address</h3>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">💼</span>
+        <h3>Position applied for</h3>
+        <input id="position" name="position" required placeholder="e.g. ICT Technician">
+      </div>
+
+      <div class="step">
+        <span class="step-icon">📷</span>
+        <h3>Upload your profile picture</h3>
+        <p>Use a clear image. Maximum 3 MB.</p>
+        <input id="photo" name="photo" type="file" accept="image/*" required>
+      </div>
+
+      <div class="step">
+        <span class="step-icon">📄</span>
+        <h3>Upload your CV</h3>
+        <p>Accepted: PDF, DOC and DOCX. Maximum 5 MB.</p>
+        <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" required>
+      </div>
+
+      <div class="step">
+        <span class="step-icon">📝</span>
+        <h3>Cover letter & confirmation</h3>
+        <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="Optional cover letter"></textarea>
+        <label class="check"><input id="consent" type="checkbox" required> I confirm that the information provided is accurate.</label>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="backBtn" class="secondary-btn">← Back</button>
+        <button type="button" id="nextBtn" class="submit-btn">Continue →</button>
+      </div>
+      <div id="message" class="message" role="status"></div>
+    </form>
+  </section>
+
+  <section class="help-card">
+    <div>
+      <p class="eyebrow">NEED HELP?</p>
+      <h2>Recruitment assistance</h2>
+      <p>Need help completing the application?</p>
+    </div>
+    <a class="whatsapp" href="https://wa.me/254706756141" target="_blank" rel="noopener">💬 WhatsApp +254 706 756 141</a>
+  </section>
+</main>
+
+<div id="settingsPanel" class="settings-panel" aria-hidden="true">
+  <div class="settings-head">
+    <h2>⚙️ Settings</h2>
+    <button id="closeSettings" class="close-btn">×</button>
+  </div>
+
+  <div class="settings-progress">
+    <div class="circle"><span id="settingsPercent">0%</span></div>
+    <div><strong>Application progress</strong><p id="settingsStep">Step 1 of 10</p></div>
+  </div>
+
+  <div class="setting-card">
+    <span>📅 Application deadline</span>
+    <strong id="panelDeadline">30 November 2026</strong>
+    <small id="panelCountdown"></small>
+  </div>
+
+  <button class="setting-action" id="saveDraftBtn">💾 Save application draft</button>
+  <button class="setting-action" id="resumeBtn">↩️ Resume application</button>
+  <button class="setting-action" id="themeBtn">🌙 Change theme</button>
+  <a class="setting-action link-action" href="mailto:malialexander254@gmail.com?subject=CareerApply%20Problem">🐞 Report a problem</a>
+  <a class="setting-action link-action" href="https://wa.me/254706756141" target="_blank" rel="noopener">🆘 Seek assistance</a>
+  <button class="setting-action" id="feedbackBtn">💬 Send feedback</button>
+  <button class="setting-action danger" id="logoutBtn">🚪 Log out</button>
+
+  <div id="feedbackArea" class="feedback-area hidden">
+    <textarea id="feedback" rows="4" placeholder="Tell us how we can improve..."></textarea>
+    <button id="sendFeedback" class="submit-btn">Send Feedback</button>
+  </div>
+</div>
+<div id="settingsOverlay" class="overlay"></div>
+
+<footer><div class="container">© 2026 CareerApply • Secure recruitment application interface</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
